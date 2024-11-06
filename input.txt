@@ -1,7 +1,7 @@
 1- Gestions des tâches:
 2- Planification des taches dans cron et notification:
-3- Affichages des tâches en arrière plan:
+3- Affichages des tâches:
 4- Lancer tâches avec notification:
 5- Modifier la priorite d'une tâche avec notification:
-6- Afficher la journalisation des tâches:6
+6- Afficher la journalisation des tâches:
 

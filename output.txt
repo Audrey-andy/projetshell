@@ -1,6 +1,8 @@
---------------------------------------------
-Evenement : ssl
-PID : 4
-Informations : 
-Date : ven. 25 oct. 2024 00:04:24 CEST
---------------------------------------------
+La tâche est lancée avec le PID 162325
+appel.sh
+fonctions.sh
+input.txt
+main.sh
+output.txt
+readme.md
+Résultats de la commande :
