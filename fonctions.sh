@@ -102,8 +102,6 @@ gestion_taches() {
 			#Exécute la commande en arrière plan et stocke le PID de la tâche
 			pid=$!
 			echo "La tâche est lancée avec le PID $pid" > output.txt
-
-			echo "Résultats dans output.txt"
 			;;
 
 		2)
@@ -118,8 +116,6 @@ gestion_taches() {
 			#Envoie le signal SIGTERM pour arrêter la tâche spécifiée
 			kill $task_id
 			echo "La tâche avec le PID $task_id a été arrêtée" > output.txt
-
-			echo "Résultats dans output.txt"
 			;;
 
 		4)
@@ -129,8 +125,6 @@ gestion_taches() {
 			#Envoie le signal STOP pour suspendre la tâche spécifiée
 			kill -STOP %$job_number
 			echo "La tâche avec le numéro $job_number a été suspendue" > output.txt
-			
-			echo "Résultats dans output.txt"
 			;;
 
 		5)
@@ -140,13 +134,10 @@ gestion_taches() {
 			#Envoie le signal CONT pour reprendre la tâche spécifiée
 			kill -CONT %$job_number
 			echo "La tâche avec le numéro $job_number a été reprise" > output.txt
-
-			echo "Résultats dans output.txt"
 			;;
 
 		6)
 			#Quitter
-			echo "Fin de la gestion de la tâche." > output.txt
 			echo "Fin de la gestion de la tâche."
 
 			exit 0
@@ -270,7 +261,7 @@ planifier_tache() {
 	local jour_semaine="$6"    # Jour de la semaine (0-7 ou 0 et 7 représentent dimanche)
 
 	#Prepare l'entrée crontab
-	tache_cron="$minute $heure $jour_mois $mois $jour_semaine $commande"
+	tache_cron="$minute $heure $jour_mois $mois $jour_semaine $commande" 
 
 	# Ajoute la tâche au fichier crontab de l'utilisateur
 	(crontab -l 2>/dev/null; echo "$tache_cron") | crontab -
@@ -296,8 +287,8 @@ appel1() {
                         exit
                         ;;
                 2)
-                        read -p "Entrer la commande à planifier" commande
-                        read -p "Entrer la minute (0-59)" minute
+                        read -p "Entrer la commande à planifier : " commande
+                        read -p "Entrer la minute (0-59) : " minute
                         read -p "Entrer l'heure (0-23)" heure
                         read -p "Entrer le jour du mois (1-31 ou * pour chaque jour ) : " jour_mois
                         read -p "Entrer le mois (1-12 ou * pour chaque mois) : " mois
@@ -346,8 +337,8 @@ appel2() {
                         gestion_taches
                         ;;
                 2)
-                        read -p "Entrer la commande à planifier" commande
-                        read -p "Entrer la minute (0-59)" minute
+                        read -p "Entrer la commande à planifier : " commande
+                        read -p "Entrer la minute (0-59) : " minute
                         read -p "Entrer l'heure (0-23)" heure
                         read -p "Entrer le jour du mois (1-31 ou * pour chaque jour ) : " jour_mois
                         read -p "Entrer le mois (1-12 ou * pour chaque mois) : " mois

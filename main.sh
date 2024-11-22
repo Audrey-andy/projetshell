@@ -15,10 +15,14 @@ main() {
 	if [[ -n "$choice" && "$choice" =~ ^[0-9]+$ ]]; then
 
 		#Appel de la fonction appel1 si choice est un nombre non nul
+		echo
 		appel1
 		echo
 	else
 		#Sinon appeler appel2
+		echo
+		echo "Aucun choix trouvé dans le fichier d'entrée"
+		echo
 		appel2
 		echo
 	fi
